@@ -80,32 +80,32 @@ PUT /api/v2/animals/{id}
 DELETE /api/v2/animals/{id}
 ```
 ## Example URLs for a GET Request on **Animals**: 
-### (these URLs have `v1` as the API version, simply change this to `v2` if you require it) 
+### (these URLs have `v2` as the API version, simply change this to `v1` if you require it) 
 
 | Parameter  | Type   | Required     | Description                                      | Sample Url  |
 |----------- |-----   | ---------    | -------------                                    | ----------  |
-| Animals    | List   | not required | Returns a list of all animals in database        | https://localhost:5001/api/v1/animals |
-| Name       | String | not required | Returns animals with a matching name value       | https://localhost:5001/api/v1/animals?name=peter |
-| ID         | Int    | required     | Returns animals with a matching ID               | https://localhost:5001/api/v1/animals/1 |
-| Species    | String | not required | Returns animals with a matching species value    | https://localhost:5001/api/v1/animals?species=cat |
-| Breed      | String | not required | Returns animals with a matching breed value  | https://localhost:5001/api/v1/animals?breed=siamese |
-| Age        | Int    | not required | Returns animals with a matching age value | https://localhost:5001/api/v1/animals?age=5 |
-| Random     | boolean| not required | Returns a random animal, Default is False       | https://localhost:5001/api/v1/animals?random=true |
-| Page Number + Page Size | int, int | not required | Returns an animals list with user selected page number & page size | https://localhost:5001/api/v1/animals?pagenumber=1&pagesize=5 |
+| Animals    | List   | not required | Returns a list of all animals in database        | https://localhost:5001/api/v2/animals |
+| Name       | String | not required | Returns animals with a matching name value       | https://localhost:5001/api/v2/animals?name=peter |
+| ID         | Int    | required     | Returns animals with a matching ID               | https://localhost:5001/api/v2/animals/1 |
+| Species    | String | not required | Returns animals with a matching species value    | https://localhost:5001/api/v2/animals?species=cat |
+| Breed      | String | not required | Returns animals with a matching breed value  | https://localhost:5001/api/v2/animals?breed=siamese |
+| Age        | Int    | not required | Returns animals with a matching age value | https://localhost:5001/api/v2/animals?age=5 |
+| Random     | boolean| not required | Returns a random animal, Default is False       | https://localhost:5001/api/v2/animals?random=true |
+| Page Number + Page Size | int, int | not required | Returns an animals list with user selected page number & page size | https://localhost:5001/api/v2/animals?pagenumber=1&pagesize=5 |
 
 ### Example combination queries:
 ```
 GET Animal by Id: 
-https://localhost:5001/api/v1/animals/14
+https://localhost:5001/api/v2/animals/14
 
 GET Animals by Species & Age: 
-https://localhost:5001/api/v1/animals?species=cat&age=5
+https://localhost:5001/api/v2/animals?species=cat&age=5
 
 GET Animals using  & only Dogs: 
-https://localhost:5001/api/v1/animals?pagenumber=1&pagesize=3&species=dog
+https://localhost:5001/api/v2/animals?pagenumber=1&pagesize=3&species=dog
 ```
 
-### Example for a POST request: POST https://localhost:5001/api/v1/animals
+### Example for a POST request: POST https://localhost:5001/api/v2/animals
 
   * When using POST (create), a body with populated fields is required:
   * Note: when using POST in Swagger, be sure to remove the `"animalId": ,"` field, as it is automatically added at the top of the body. In POSTMAN, simply copy/paste the below example with your own paramaters to add an animal to the database:
@@ -117,7 +117,7 @@ https://localhost:5001/api/v1/animals?pagenumber=1&pagesize=3&species=dog
         "age": 4
       }
       ```
-### Example for a PUT request: PUT https://localhost:5001/api/v1/animals/{ID}
+### Example for a PUT request: PUT https://localhost:5001/api/v2/animals/{ID}
 
   * When using PUT (to update or modify an existing database entry), the ID of the entry is required at the end of the URL, and in the body, along with updated fields:
       ```
@@ -131,7 +131,7 @@ https://localhost:5001/api/v1/animals?pagenumber=1&pagesize=3&species=dog
       ```
 ### To simply DELETE an entry, include the ID at the end of the url: 
 ```
-DELETE https://localhost:5001/api/v1/animals/{ID}
+DELETE https://localhost:5001/api/v2/animals/{ID}
 ```
 
 [Back to Top](#animal-shelter)
