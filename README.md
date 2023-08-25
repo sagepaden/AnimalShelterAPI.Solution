@@ -138,7 +138,7 @@ DELETE https://localhost:5001/api/v2/animals/{ID}
 
 ## Known Bugs
 
-No known bugs as of 08/24/23
+No known bugs as of 08/24/2
 
 ## [MIT](https://opensource.org/license/mit/) License 
 
