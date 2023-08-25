@@ -6,7 +6,7 @@ namespace ASApi.Controllers.v2
 { 
   [ApiController] 
   [Route("api/v{version:apiVersion}/[controller]")]
-  [ApiVersion("1.0")]
+  [ApiVersion("2.0")]
   
   public class AnimalsController : ControllerBase
   {
@@ -18,7 +18,7 @@ namespace ASApi.Controllers.v2
     }
 
     [HttpGet]
-    public async Task<List<Animal>> Get(string name, string species, string breed, int age, bool random = false)
+    public async Task<List<Animal>> Get(int pageNumber, int pageSize, string name, string species, string breed, int age, bool random = false)
     {
       IQueryable<Animal> query = _db.Animals
                                   .AsQueryable();
@@ -40,6 +40,10 @@ namespace ASApi.Controllers.v2
       if (age > 0)
       {
         query = query.Where(entry => entry.Age == age);
+      }
+      if (pageNumber > 0 && pageSize > 0)
+      {
+        query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize); 
       }
 
       if (random)
