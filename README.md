@@ -38,8 +38,7 @@ appsettings.json
 ```
 4. Navigate to this project's production directory called `ASApi` with $ `cd ASApi`.
 5. Within the production directory create a new file called `appsettings.json` with $ `touch appsettings.json`.
-6. Within `appsettings.json`, paste in the following code, replacing `user-id`, and `password` with your own username and password for MySQL Workbench.
-(remove square brackets when inputting your details):
+6. Within `appsettings.json`, paste in the following code, replacing `exampleuser`, and `examplepassword` with your own username and password for MySQL Workbench.
   ```
 {
   "Logging": {
@@ -50,7 +49,7 @@ appsettings.json
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api;uid=[user-id];pwd=[password];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api;uid=exampleuser;pwd=examplepassword;"
   }
 }
   ```
@@ -68,7 +67,7 @@ appsettings.json
 
 * Further Exploration - `API Versioning` is enabled, which defaults to API v2 when Swagger opens. Simply use the Swagger `Select a definition` drop down options list to select API v1. Versioning is important because when we make breaking changes in the future, we can push these changes to a new version, and retain an original version that can't update to Version 2 just yet.
 * To access API v1 in Postman: `https://localhost:5001/api/v1/animals/` 
-* To access API v2 in Postman: `https://localhost:5001/api/v1/animals/`
+* To access API v2 in Postman: `https://localhost:5001/api/v2/animals/`
 
 * `Randomization` of results has been implented as well. A URL example is included in the table below. 
 
