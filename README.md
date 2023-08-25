@@ -1,5 +1,0 @@
-bin
-obj
-appsettings.json
-.vscode
-.DS_Store
